@@ -1,0 +1,30 @@
+ImportError                               Traceback (most recent call last)
+Cell In[1], line 2
+      1 import pandas as pd
+----> 2 simpson = pd.read_html('https://es.wikipedia.org/wiki/Los_Simpson')
+      3 simpson[5]
+
+File /usr/local/lib/python3.11/site-packages/pandas/io/html.py:1212, in read_html(io, match, flavor, header, index_col, skiprows, attrs, parse_dates, thousands, encoding, decimal, converters, na_values, keep_default_na, displayed_only, extract_links, dtype_backend)
+   1208 check_dtype_backend(dtype_backend)
+   1210 io = stringify_path(io)
+-> 1212 return _parse(
+   1213     flavor=flavor,
+   1214     io=io,
+   1215     match=match,
+   1216     header=header,
+   1217     index_col=index_col,
+   1218     skiprows=skiprows,
+   1219     parse_dates=parse_dates,
+   1220     thousands=thousands,
+   1221     attrs=attrs,
+   1222     encoding=encoding,
+   1223     decimal=decimal,
+   1224     converters=converters,
+   1225     na_values=na_values,
+   1226     keep_default_na=keep_default_na,
+...
+    933     if not _HAS_LXML:
+--> 934         raise ImportError("lxml not found, please install it")
+    935 return _valid_parsers[flavor]
+
+ImportError: lxml not found, please install it
